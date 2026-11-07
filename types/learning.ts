@@ -1,4 +1,4 @@
-export type TopicId = 'understanding-trees' | 'understanding-nodes';
+export type TopicId = 'understanding-trees' | 'understanding-nodes' | 'bst-search';
 
 export type TopicStatus = 'locked' | 'available' | 'in-progress' | 'completed';
 
