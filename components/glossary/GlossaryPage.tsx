@@ -43,7 +43,7 @@ export default function GlossaryPage() {
         description="Plain-language meanings for every term in the lessons. Search by word or by idea."
       />
 
-      <Paper variant="outlined" sx={{ p: { xs: 2.5, md: 3 }, borderRadius: 4, mb: 3 }}>
+      <Paper variant="outlined" sx={{ p: { xs: 2.5, md: 3 }, borderRadius: 3, mb: 3 }}>
         <TextField
           fullWidth
           type="search"
