@@ -17,6 +17,7 @@ export const bstSearch: TopicDefinition = {
       title: 'Finding a value in a binary search tree',
       description:
         'A short walkthrough of how a search narrows down a binary search tree one comparison at a time. Captions will appear here once the lesson video is added.',
+      src: '/videos/lesson-03.mp4',
     },
     sections: [
       {

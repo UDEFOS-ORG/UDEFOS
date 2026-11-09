@@ -17,6 +17,7 @@ export const understandingNodes: TopicDefinition = {
       title: 'Inside a node',
       description:
         'A walkthrough of how nodes hold values and references. Captions will appear here once the lesson video is added.',
+      src: '/videos/lesson-02.mp4',
     },
     sections: [
       {
