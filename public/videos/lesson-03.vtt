@@ -1,0 +1,359 @@
+WEBVTT
+
+00:00:00.288 --> 00:00:02.748
+Binary search tree search algorithms.
+
+00:00:03.360 --> 00:00:06.500
+You know, have you ever actually
+stopped to wonder how a massive database
+
+00:00:06.500 --> 00:00:09.044
+can pinpoint one specific
+number out of literally
+
+00:00:09.044 --> 00:00:11.120
+millions in just a fraction of a second?
+
+00:00:11.808 --> 00:00:15.148
+Well, today, we're popping the hood on
+a brilliantly efficient data structure
+
+00:00:15.148 --> 00:00:17.468
+that makes that exact
+kind of speed possible.
+
+00:00:18.048 --> 00:00:18.912
+Let's get right into it.
+
+00:00:19.968 --> 00:00:21.948
+Here is our quick agenda for today.
+
+00:00:21.948 --> 00:00:25.068
+We're gonna kick things off with
+a recap of trees and nodes,
+
+00:00:25.068 --> 00:00:29.228
+then break down the binary search tree
+rule, map out the search algorithm itself,
+
+00:00:29.228 --> 00:00:32.352
+and finally lock it all
+in with a worked example.
+
+00:00:33.216 --> 00:00:35.876
+Alright, section one.
+Recap, Trees and Notes.
+
+00:00:36.576 --> 00:00:40.956
+So to lay the groundwork, let's look at
+the basic anatomy of a standard tree.
+
+00:00:40.956 --> 00:00:45.996
+Think of a tree as basically a collection
+of data points, which we call nodes,
+
+00:00:45.996 --> 00:00:49.996
+connected by paths or edges. Each
+node holds a specific value.
+
+00:00:50.688 --> 00:00:54.425
+and the absolute golden rule
+here, there is exactly one root
+
+00:00:54.425 --> 00:00:57.788
+node at the very top and
+absolutely no loops anywhere.
+
+00:00:57.788 --> 00:01:01.632
+The data flows strictly downward,
+kind of like a corporate org chart.
+
+00:01:02.496 --> 00:01:06.616
+Now if we restrict that structure
+just a bit, we get a binary tree.
+
+00:01:06.616 --> 00:01:10.356
+Meaning each parent node branches
+out to a maximum of two children.
+
+00:01:10.356 --> 00:01:12.496
+It's right there in the
+name, right? Binary.
+
+00:01:12.496 --> 00:01:16.656
+A node can have zero, one, or two
+children, but never more than two.
+
+00:01:16.656 --> 00:01:20.160
+And we keep it simple by just calling
+them the left child and the right child.
+
+00:01:21.120 --> 00:01:25.220
+But here's the thing, a basic binary
+tree is great for holding data, sure,
+
+00:01:25.220 --> 00:01:29.900
+but it doesn't inherently help us find
+that data quickly. It needs a spark.
+
+00:01:29.900 --> 00:01:34.940
+We need one specific, elegant rule to
+transform it from a basic storage unit
+
+00:01:34.940 --> 00:01:36.660
+into a high-speed search tool.
+
+00:01:37.536 --> 00:01:40.636
+which brings us to section 2,
+the binary search tree rule.
+
+00:01:41.472 --> 00:01:44.306
+This rule is the secret sauce. Here it is.
+
+00:01:44.306 --> 00:01:47.612
+For every single node,
+all the values in its left
+
+00:01:47.612 --> 00:01:51.648
+subtree are smaller, and all the value in
+its right subtree is larger. If you look
+
+00:01:52.032 --> 00:01:52.572
+at the root
+
+00:01:52.572 --> 00:01:57.243
+node holding the number 8 right now,
+check out its entire left side.
+
+00:01:57.243 --> 00:01:58.892
+Nodes 3, 1, and 6. Every
+
+00:01:58.892 --> 00:02:00.652
+single one of those is smaller than 8.
+
+00:02:01.344 --> 00:02:06.684
+now glance at the right side, the nodes
+10, 9 and 14, all strictly larger than 8.
+
+00:02:07.872 --> 00:02:10.724
+And the absolute beauty of
+this is that the rule applies
+
+00:02:10.724 --> 00:02:13.932
+universally across the entire
+tree, not just at that top route.
+
+00:02:14.496 --> 00:02:16.608
+Take the number 3 on the
+left side, for example.
+
+00:02:16.956 --> 00:02:21.756
+Its left child is 1, which is smaller.
+Its right child is 6, which larger.
+
+00:02:21.756 --> 00:02:23.836
+Because of this totally
+predictable sorting,
+
+00:02:23.836 --> 00:02:26.836
+you instantly know which
+side a target has to be on.
+
+00:02:26.836 --> 00:02:30.816
+It guarantees you will never, ever need
+to check every single value in the tree.
+
+00:02:31.488 --> 00:02:34.588
+Okay, moving to section
+3, the search algorithm.
+
+00:02:35.424 --> 00:02:38.880
+Think of this algorithm like a wildly
+efficient choose your own adventure map.
+
+00:02:39.184 --> 00:02:42.944
+You always start your search at the root.
+Then you just compare your target value
+
+00:02:42.944 --> 00:02:45.784
+with the current node. If it's
+a match, boom, you're done.
+
+00:02:46.464 --> 00:02:49.404
+If your target is smaller, you
+move down to the left child.
+
+00:02:49.404 --> 00:02:52.992
+If it's larger, you moved to the right
+child. You just repeat that loop.
+
+00:02:53.304 --> 00:02:56.304
+And if you ever need to move left or
+right, but there's no node there,
+
+00:02:56.304 --> 00:02:59.304
+you immediately know your target
+simply isn't in the tree.
+
+00:03:00.096 --> 00:03:03.756
+Let's actually see that in action.
+Say we are searching for the number 9.
+
+00:03:03.756 --> 00:03:08.436
+We start at the root 8. 9 is
+larger, so we go right. We hit 10.
+
+00:03:08.436 --> 00:03:12.192
+9 is smaller than 10, so go left.
+And bam, there's our target.
+
+00:03:12.672 --> 00:03:14.812
+Look at how crazy efficient that is.
+
+00:03:14.812 --> 00:03:17.692
+Just by starting at eight
+and realizing nine is larger,
+
+00:03:17.692 --> 00:03:20.752
+we instantly ignored the
+entire left side of the tree.
+
+00:03:20.752 --> 00:03:22.992
+We didn't even glance at
+the three, one, or six.
+
+00:03:23.808 --> 00:03:27.448
+Each step throws away a whole subtree,
+so the search finishes quickly.
+
+00:03:28.032 --> 00:03:31.512
+That right there is why this data
+structure is an absolute superpower.
+
+00:03:31.512 --> 00:03:33.792
+You aren't just crossing
+off one number at a time.
+
+00:03:33.792 --> 00:03:37.932
+You are literally eliminating half of your
+remaining work with a single comparison.
+
+00:03:38.880 --> 00:03:41.472
+Let's wrap this up with
+section 4, a worked example.
+
+00:03:42.144 --> 00:03:46.044
+to really prove how bulletproof this
+is. Let's do a side-by-side comparison.
+
+00:03:46.044 --> 00:03:46.176
+We're
+
+00:03:46.560 --> 00:03:50.044
+going to search for a number that
+does exist in R-Tree, the number 6,
+
+00:03:50.044 --> 00:03:53.856
+and pit it against a search for
+number that doesn't exist, the 7.
+
+00:03:54.720 --> 00:03:59.100
+First up, tracking the successful search
+for six. We start at the root, eight.
+
+00:03:59.100 --> 00:04:00.960
+Is six smaller or larger? Smaller,
+
+00:04:01.344 --> 00:04:04.140
+so we jump left. Now we're at three.
+
+00:04:04.140 --> 00:04:05.856
+Is six small or larger. Larger,
+
+00:04:06.240 --> 00:04:07.700
+so branch right.
+
+00:04:08.352 --> 00:04:11.772
+We land on six, the value matches,
+and mission accomplished.
+
+00:04:11.772 --> 00:04:15.052
+We found our target in exactly
+three lightning-fast comparisons.
+
+00:04:15.840 --> 00:04:19.340
+Now, conversely, what
+happens when we search for 7?
+
+00:04:19.340 --> 00:04:21.540
+We follow that exact same initial path.
+
+00:04:21.540 --> 00:04:26.540
+Start at 8, go left to 3, 7 is
+larger than 3, so we go right to 6.
+
+00:04:26.540 --> 00:04:31.940
+Now we compare 7 with 6. 7 is bigger,
+which means we absolutely must go right.
+
+00:04:31.940 --> 00:04:37.140
+But look closely at the node for 6. It
+has no right child. We've hit a dead end.
+
+00:04:37.140 --> 00:04:38.840
+And because of that strict sorting rule,
+
+00:04:38.840 --> 00:04:41.940
+we can definitively say
+7 is not in this tree.
+
+00:04:41.940 --> 00:04:44.140
+We don't have to go check the
+right side of the main tree at all.
+
+00:04:44.544 --> 00:04:47.364
+We know exactly where 7 should
+be, and it's just not there.
+
+00:04:48.288 --> 00:04:50.364
+So we've seen how perfectly this algorithm
+
+00:04:50.364 --> 00:04:52.588
+hums along when the tree
+branches out neatly.
+
+00:04:53.568 --> 00:04:55.968
+I want to leave you with a
+bit of a curveball question.
+
+00:04:56.328 --> 00:04:59.328
+If a binary search tree cuts
+our work in half at every step,
+
+00:04:59.668 --> 00:05:02.708
+what happens if the tree
+becomes completely lopsided?
+
+00:05:03.264 --> 00:05:07.864
+Like, what if we added the numbers 1,
+2, 3, 4, and 5 in that exact order?
+
+00:05:07.864 --> 00:05:10.684
+The tree would just be a single straight
+line pointing down to the right.
+
+00:05:11.424 --> 00:05:14.684
+Would our superfast algorithms still
+be able to throw away half the tree?
+
+00:05:14.684 --> 00:05:16.604
+Or would it completely break down?
+
+00:05:17.280 --> 00:05:18.624
+Definitely something to chew on. Thanks
+
+00:05:19.008 --> 00:05:20.640
+so much for joining me on This Explaner,
+
+00:05:20.640 --> 00:05:21.792
+and I'll catch you next time.

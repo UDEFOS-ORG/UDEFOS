@@ -18,6 +18,7 @@ export const bstSearch: TopicDefinition = {
       description:
         'A short walkthrough of how a search narrows down a binary search tree one comparison at a time. Captions will appear here once the lesson video is added.',
       src: '/videos/lesson-03.mp4',
+      captionsSrc: '/videos/lesson-03.vtt',
     },
     sections: [
       {

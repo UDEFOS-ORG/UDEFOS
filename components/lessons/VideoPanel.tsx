@@ -43,9 +43,9 @@ export default function VideoPanel({ video }: VideoPanelProps) {
         )}
       </Box>
 
-      <Typography variant="body1" color="text.secondary" sx={{ mt: 2 }}>
+      {/* <Typography variant="body1" color="text.secondary" sx={{ mt: 2 }}>
         {video.description}
-      </Typography>
+      </Typography> */}
     </Paper>
   );
 }
