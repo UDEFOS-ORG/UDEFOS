@@ -16,7 +16,7 @@ export default function PageHeader({ eyebrow, title, description }: PageHeaderPr
         {title}
       </Typography>
       {description && (
-        <Typography variant="body1" color="text.secondary" sx={{ mt: 1.5, maxWidth: 680 }}>
+        <Typography variant="body1" color="text.secondary" sx={{ mt: 1.5 }}>
           {description}
         </Typography>
       )}
