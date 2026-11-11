@@ -17,7 +17,7 @@ export interface NavItem {
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Dashboard', href: '/', icon: DashboardRounded, available: true },
   { label: 'Lessons', href: '/lessons', icon: MenuBookRounded, available: true },
-  { label: 'BST Playground', href: '/playground', icon: AccountTreeRounded, available: false },
+  { label: 'BST Playground', href: '/playground', icon: AccountTreeRounded, available: true },
   { label: 'Achievements', href: '/achievements', icon: EmojiEventsRounded, available: true },
   { label: 'Glossary', href: '/glossary', icon: SpellcheckRounded, available: true },
   { label: 'Progress', href: '/progress', icon: QueryStatsRounded, available: true },
