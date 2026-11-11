@@ -93,6 +93,7 @@ export default function BstPlaygroundPage() {
       setMessage({ tone: 'error', text: invalidMessage });
       return;
     }
+    setLastChange(null);
     const { found, path } = searchValue(root, value);
     if (found) {
       setHighlight({ path, target: value, tone: 'success' });
