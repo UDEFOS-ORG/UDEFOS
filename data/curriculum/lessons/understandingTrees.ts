@@ -16,6 +16,8 @@ export const understandingTrees: TopicDefinition = {
       title: 'Trees in everyday life',
       description:
         'A short tour of hierarchical structures you already use, from family trees to folder systems. Captions will appear here once the lesson video is added.',
+      src: '/videos/lesson-01.mp4',
+      captionsSrc: '/videos/lesson-01.vtt',
     },
     sections: [
       {

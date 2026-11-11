@@ -1,0 +1,386 @@
+WEBVTT
+
+00:00:00.192 --> 00:00:01.632
+Welcome to This Explainer. Today,
+
+00:00:02.016 --> 00:00:04.732
+we're going to learn exactly
+how to take the sheer,
+
+00:00:04.732 --> 00:00:08.572
+overwhelming chaos of raw information
+and organize it into elegant,
+
+00:00:08.572 --> 00:00:10.132
+lightning-fast structures.
+
+00:00:10.132 --> 00:00:13.852
+We are kicking things off with
+Lesson 01, Understanding Trees.
+
+00:00:13.852 --> 00:00:15.932
+If you've ever sat there
+and wondered how your
+
+00:00:15.932 --> 00:00:18.012
+computer finds exactly
+what you're looking for
+
+00:00:18.012 --> 00:00:21.372
+in literally a fraction of a second,
+well, you're in the right place.
+
+00:00:22.176 --> 00:00:23.676
+Here is our roadmap for today.
+
+00:00:23.676 --> 00:00:27.276
+We'll be looking at data, data
+structures, and algorithms.
+
+00:00:27.276 --> 00:00:30.196
+Then we'll compare linear
+and hierarchical structures,
+
+00:00:30.196 --> 00:00:33.196
+bring down exactly what a
+tree is and why it's useful,
+
+00:00:33.196 --> 00:00:35.516
+and finally, we'll dive
+into the terminology.
+
+00:00:35.516 --> 00:00:40.512
+Roots, parents, children, siblings,
+leaves, levels, depth, and height.
+
+00:00:40.836 --> 00:00:41.568
+Let's get to it.
+
+00:00:42.432 --> 00:00:45.312
+data, data structures, and algorithms.
+
+00:00:45.888 --> 00:00:50.628
+First up, we've got data. And data
+is really just any raw information.
+
+00:00:50.628 --> 00:00:54.240
+It could be a number, a name,
+a date, you name it. But here's
+
+00:00:54.624 --> 00:00:56.348
+the thing, on its own,
+
+00:00:56.348 --> 00:01:00.808
+data isn't actually very helpful.
+Imagine a massive list of just raw data,
+
+00:01:00.808 --> 00:01:04.548
+like say a thousand names. If
+it's just disorganized chaos,
+
+00:01:04.548 --> 00:01:08.688
+it is incredibly slow for a computer to
+search through and find one specific person.
+
+00:01:09.408 --> 00:01:13.056
+So this brings us to a brilliant
+solution. We need a system.
+
+00:01:13.388 --> 00:01:16.828
+Think of a physical library. The book's
+just sitting there on the shelves.
+
+00:01:16.828 --> 00:01:17.760
+That's your data. The
+
+00:01:18.144 --> 00:01:20.588
+catalog system used to
+actually arrange those books
+
+00:01:20.588 --> 00:01:23.468
+so you can find them, that
+is your data structure.
+
+00:01:23.468 --> 00:01:26.508
+And finally, the specific
+clear steps a librarian follows
+
+00:01:26.508 --> 00:01:31.200
+to find a requested book, or maybe to put
+away return books, that's the algorithm.
+
+00:01:31.568 --> 00:01:35.708
+By combining a data structure to arrange
+things with an algorithm to process them,
+
+00:01:35.712 --> 00:01:39.152
+we totally transform that
+initial chaos into perfect order.
+
+00:01:39.840 --> 00:01:41.740
+linear and hierarchical structures.
+
+00:01:42.528 --> 00:01:45.329
+Now, you can organize data
+linearly, which just means
+
+00:01:45.329 --> 00:01:47.708
+items are arranged one
+right after the other.
+
+00:01:47.708 --> 00:01:49.795
+Think of the songs in your
+favorite playlist, or
+
+00:01:49.795 --> 00:01:51.708
+people standing in a
+queue at a coffee shop.
+
+00:01:52.416 --> 00:01:56.316
+Every single item has exactly one
+thing before it and one thing after it.
+
+00:01:56.316 --> 00:01:57.024
+Simple, right?
+
+00:01:57.696 --> 00:02:01.996
+Then we have hierarchical structures. This
+is where items are arranged in levels,
+
+00:02:01.996 --> 00:02:06.356
+meaning some items sit logically underneath
+others. A great everyday example of this
+
+00:02:06.356 --> 00:02:07.968
+is the folder system on your computer.
+
+00:02:08.736 --> 00:02:12.768
+A standard corporate company chart
+actually perfectly visualizes a hierarchy.
+
+00:02:13.116 --> 00:02:16.256
+You can see how the CEO sits
+right there at the very top level.
+
+00:02:16.256 --> 00:02:19.896
+Below the CEO, you've got different
+departments, like sales and dev.
+
+00:02:19.896 --> 00:02:23.256
+And then below dev, you might have specific
+teams, you know, like web and data.
+
+00:02:24.000 --> 00:02:27.320
+Each team reports up to one
+specific manager above it.
+
+00:02:27.320 --> 00:02:31.420
+In this hierarchical structure, it's the
+absolute foundation of what we call trees
+
+00:02:31.420 --> 00:02:32.500
+in computer science.
+
+00:02:33.120 --> 00:02:36.540
+Alright, section 3. What a
+tree is and why it's useful.
+
+00:02:37.344 --> 00:02:40.204
+Now, to actually be considered
+a tree in computer science,
+
+00:02:40.204 --> 00:02:43.004
+a data structure has to follow
+some pretty strict rules.
+
+00:02:43.004 --> 00:02:44.924
+First off, it's a collection of nodes,
+
+00:02:44.924 --> 00:02:48.124
+and each node is simply a little
+container holding a value.
+
+00:02:48.124 --> 00:02:50.924
+These nodes are connected by
+lines, which we call edges.
+
+00:02:50.924 --> 00:02:54.924
+A true tree has exactly one top node
+that acts as the starting point.
+
+00:02:54.924 --> 00:02:58.124
+And crucially, this is important.
+It never loops back on itself.
+
+00:02:58.124 --> 00:03:01.164
+It is strictly a one-way flow
+of structure. No charcats.
+
+00:03:02.208 --> 00:03:04.828
+So why do we bother setting
+up all these strict rules?
+
+00:03:04.828 --> 00:03:09.628
+Well, trees are incredibly useful because
+they show hierarchy with crystal clarity.
+
+00:03:09.628 --> 00:03:11.868
+But even more importantly for performance,
+
+00:03:11.868 --> 00:03:16.748
+this specific shape allows a computer to
+move from the top down to any specific item
+
+00:03:16.748 --> 00:03:19.188
+without having to check
+every single thing in turn.
+
+00:03:19.188 --> 00:03:22.868
+It literally bypasses entire
+branches of data it doesn't need,
+
+00:03:22.868 --> 00:03:26.628
+which drastically speeds up its ability
+to find exactly what you requested.
+
+00:03:26.628 --> 00:03:27.588
+It's a real game changer.
+
+00:03:28.416 --> 00:03:29.966
+Finally, section 4.
+
+00:03:29.966 --> 00:03:35.676
+Roots, Parents, Children, Siblings,
+Leaves, Levels, Depth, and Height.
+
+00:03:36.576 --> 00:03:40.236
+When you visualize a tree data structure,
+you're going to notice a playful,
+
+00:03:40.236 --> 00:03:43.136
+kind of counterintuitive quirk of
+computer science right off the bat.
+
+00:03:43.680 --> 00:03:45.460
+They actually grow upside down.
+
+00:03:45.460 --> 00:03:48.060
+Yeah, we start at the very top
+and we build our way downwards.
+
+00:03:48.960 --> 00:03:53.580
+To navigate this upside-down structure,
+we rely on familiar family terms.
+
+00:03:53.580 --> 00:03:56.460
+A parent is a node that
+has other nodes below it.
+
+00:03:56.460 --> 00:03:59.420
+A child is a know directly
+below its parent.
+
+00:03:59.420 --> 00:04:02.700
+And nodes that share the exact same
+parent, well, they're called siblings.
+
+00:04:02.700 --> 00:04:07.180
+So if nodes B and C are the children
+of parent node A, that makes B and
+
+00:04:07.180 --> 00:04:08.140
+C siblings to each other.
+
+00:04:08.832 --> 00:04:12.092
+Connected nodes form these parent
+child pairs all the way down the line.
+
+00:04:12.864 --> 00:04:16.344
+Alongside those family terms, we
+also borrow a bit from nature.
+
+00:04:16.344 --> 00:04:20.844
+We call that single exclusive starting
+point at the very top, the root node.
+
+00:04:20.844 --> 00:04:22.272
+In this case, that's node A.
+
+00:04:22.752 --> 00:04:26.932
+On the flip side, a leaf is a node with
+absolutely zero children below it.
+
+00:04:26.932 --> 00:04:27.932
+It's a dead end.
+
+00:04:27.932 --> 00:04:32.812
+So nodes D, E and C are leaves, sitting
+at the very edge of our tree's branches.
+
+00:04:33.696 --> 00:04:35.646
+Okay, so now that we know the anatomy, how
+
+00:04:35.646 --> 00:04:37.596
+do we actually measure one of these trees?
+
+00:04:37.596 --> 00:04:40.796
+Well, we organize it into levels,
+counting down from the top.
+
+00:04:40.796 --> 00:04:44.736
+But be careful here, the root
+is always level 0, not 1.
+
+00:04:45.600 --> 00:04:48.841
+When we want to find a specific node's
+depth, we just count the physical
+
+00:04:48.841 --> 00:04:52.128
+number of edges it takes to get from
+the root down to that specific node.
+
+00:04:52.440 --> 00:04:56.386
+And if we want measure the overall tree's
+height, we look for the longest path
+
+00:04:56.386 --> 00:05:00.180
+from the route all the way down to a
+leaf and count the edges on that path.
+
+00:05:00.180 --> 00:05:02.680
+For the tree we've been looking
+at, the height is exactly 2.
+
+00:05:03.456 --> 00:05:05.712
+Understanding these structures reveals the
+
+00:05:05.712 --> 00:05:08.076
+invisible architecture
+of our digital world.
+
+00:05:08.076 --> 00:05:10.527
+It's exactly what turns the sheer chaos of
+
+00:05:10.527 --> 00:05:13.036
+raw data into the
+lightning fast technology
+
+00:05:13.036 --> 00:05:14.976
+that you and I rely on
+every single day. So,
+
+00:05:15.360 --> 00:05:17.436
+the next time your
+computer retrieves a file
+
+00:05:17.436 --> 00:05:20.142
+seemingly out of nowhere
+in a fraction of a second,
+
+00:05:20.142 --> 00:05:22.848
+ask yourself, what kind of
+tree made that possible?
+
+00:05:23.616 --> 00:05:26.676
+Thanks so much for joining me for
+Lesson 01, and I'll see you next time.
