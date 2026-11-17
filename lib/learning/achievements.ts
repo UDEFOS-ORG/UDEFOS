@@ -1,12 +1,13 @@
 import AccountTreeRounded from '@mui/icons-material/AccountTreeRounded';
 import EmojiEventsRounded from '@mui/icons-material/EmojiEventsRounded';
+import SchemaRounded from '@mui/icons-material/SchemaRounded';
 import HubRounded from '@mui/icons-material/HubRounded';
 import WorkspacePremiumRounded from '@mui/icons-material/WorkspacePremiumRounded';
 import type { SvgIconComponent } from '@mui/icons-material';
 import { isTopicCompleted } from '@/lib/learning/learningPath';
 import type { LearnerState, TopicId } from '@/types/learning';
 
-const PATH_TOPIC_IDS: TopicId[] = ['understanding-trees', 'understanding-nodes'];
+const PATH_TOPIC_IDS: TopicId[] = ['understanding-trees', 'understanding-nodes', 'bst-search'];
 
 interface AchievementDefinition {
   id: string;
@@ -38,6 +39,13 @@ const ACHIEVEMENTS: AchievementDefinition[] = [
     description: 'Complete Understanding Nodes.',
     icon: HubRounded,
     isUnlocked: (state) => isTopicCompleted(state, 'understanding-nodes'),
+  },
+  {
+    id: 'bst-master',
+    title: 'BST Master',
+    description: 'Complete BST Search Algorithm.',
+    icon: SchemaRounded,
+    isUnlocked: (state) => isTopicCompleted(state, 'bst-search'),
   },
   {
     id: 'perfect-score',
