@@ -1,5 +1,6 @@
 import AccountTreeRounded from '@mui/icons-material/AccountTreeRounded';
 import EmojiEventsRounded from '@mui/icons-material/EmojiEventsRounded';
+import SchemaRounded from '@mui/icons-material/SchemaRounded';
 import HubRounded from '@mui/icons-material/HubRounded';
 import WorkspacePremiumRounded from '@mui/icons-material/WorkspacePremiumRounded';
 import type { SvgIconComponent } from '@mui/icons-material';
@@ -43,7 +44,7 @@ const ACHIEVEMENTS: AchievementDefinition[] = [
     id: 'bst-master',
     title: 'BST Master',
     description: 'Complete BST Search Algorithm.',
-    icon: AccountTreeRounded,
+    icon: SchemaRounded,
     isUnlocked: (state) => isTopicCompleted(state, 'bst-search'),
   },
   {
